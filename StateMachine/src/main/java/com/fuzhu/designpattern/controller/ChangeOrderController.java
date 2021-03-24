@@ -20,7 +20,6 @@ public class ChangeOrderController {
     @Autowired
     private ChangeOrderService changeOrderService;
 
-
     @PutMapping("/update")
     public ResultInfo updateChangeOrderState(@RequestBody UpdateChangeOrderStateRequest request) {
         return changeOrderService.updateChangeOrderState(request);
