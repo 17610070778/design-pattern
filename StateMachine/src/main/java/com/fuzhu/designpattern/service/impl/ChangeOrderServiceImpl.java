@@ -9,6 +9,7 @@ import com.fuzhu.designpattern.model.state.machine.StateContent;
 import com.fuzhu.designpattern.service.ChangeOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author 辅助
@@ -20,6 +21,7 @@ public class ChangeOrderServiceImpl implements ChangeOrderService {
 
     @Autowired
     private ChangeOrderMapper changeOrderMapper;
+    @Transactional
     @Override
     public ResultInfo updateChangeOrderState(UpdateChangeOrderStateRequest updateParam) {
         ChangeOrder changeOrder = changeOrderMapper.queryById(updateParam.getId());
