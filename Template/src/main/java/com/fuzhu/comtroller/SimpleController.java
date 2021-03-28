@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  * @date 2021/3/24 20:04
  */
 @RestController
-@RequestMapping("/simple")
+@RequestMapping("/fuzhu/simple")
 public class SimpleController {
 
     @Autowired
