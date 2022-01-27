@@ -1,4 +1,4 @@
-package com.fuzhu.model.strateg.impl;
+package com.fuzhu.model.strateg.impl.load.balance;
 
 import com.fuzhu.model.strateg.AbstractLoadBalanceStrategy;
 

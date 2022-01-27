@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021/3/28 12:29
  */
 @RestController
-@RequestMapping("/fuzhu/simple")
+@RequestMapping("/strategy")
 public class LoadBalanceController {
 
     @Autowired

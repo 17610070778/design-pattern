@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2021/3/28 12:39
  */
 @SpringBootApplication
-public class StrategApplication {
+public class StrategyApplication {
     public static void main(String[] args) {
-        SpringApplication.run(StrategApplication.class, args);
+        SpringApplication.run(StrategyApplication.class, args);
     }
 }

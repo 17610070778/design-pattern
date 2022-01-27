@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021/3/21 23:29
  */
 @RestController
-@RequestMapping("/fuzhu/changeOrder")
+@RequestMapping("/changeOrder")
 public class ChangeOrderController {
     @Autowired
     private ChangeOrderService changeOrderService;

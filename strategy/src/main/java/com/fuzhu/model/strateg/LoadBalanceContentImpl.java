@@ -1,8 +1,9 @@
 package com.fuzhu.model.strateg;
 
-import com.fuzhu.model.strateg.impl.PollLoadBalance;
-import com.fuzhu.model.strateg.impl.RandomLoadBalance;
-import com.fuzhu.model.strateg.impl.WeightLoadBalance;
+import com.fuzhu.model.enums.LoadBalanceStrategyNameEnum;
+import com.fuzhu.model.strateg.impl.load.balance.PollLoadBalance;
+import com.fuzhu.model.strateg.impl.load.balance.RandomLoadBalance;
+import com.fuzhu.model.strateg.impl.load.balance.WeightLoadBalance;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +18,7 @@ import java.util.HashMap;
 @Component
 public class LoadBalanceContentImpl implements LoadBalanceContent {
     @Value("${loadBalanceName}")
-    private String LoadBalanceName;
+    private String loadBalanceName;
 
     private HashMap<String, LoadBalanceStrategy> loadBalanceMap;
 
@@ -29,13 +30,18 @@ public class LoadBalanceContentImpl implements LoadBalanceContent {
         hosts.add("192.168.0.3");
         // 初始化负载均衡器
         loadBalanceMap = new HashMap<>();
-        loadBalanceMap.put("POLL", new PollLoadBalance(hosts));
-        loadBalanceMap.put("WEIGHT", new WeightLoadBalance(hosts));
-        loadBalanceMap.put("RANDOM", new RandomLoadBalance(hosts));
+        loadBalanceMap.put(LoadBalanceStrategyNameEnum.POLL.name(), new PollLoadBalance(hosts));
+        loadBalanceMap.put(LoadBalanceStrategyNameEnum.WEIGHT.name(), new WeightLoadBalance(hosts));
+        loadBalanceMap.put(LoadBalanceStrategyNameEnum.RANDOM.name(), new RandomLoadBalance(hosts));
     }
 
     @Override
     public String nextHost() {
-        return loadBalanceMap.get(LoadBalanceName).getHost();
+        return loadBalanceMap.get(loadBalanceName).getHost();
+    }
+
+
+    private enum LoadBalanceName {
+
     }
 }
