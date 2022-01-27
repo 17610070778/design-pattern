@@ -4,7 +4,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 
@@ -17,19 +16,24 @@ import java.util.HashMap;
 public class MaxComputerStrategyContentImpl implements MaxComputerStrategyContent, ApplicationContextAware {
 
 
-    private HashMap<String, MaxComputerStrategy> strategyHashMap = new HashMap<>();
+    private HashMap<String, TaskStrategy> strategyHashMap = new HashMap<>();
 
     @Override
-    public MaxComputerStrategy getStrategy(String Name) {
+    public TaskStrategy getStrategy(String Name) {
         return strategyHashMap.get(Name);
     }
 
+    /**
+     * 初始化策略
+     * @param applicationContext
+     * @throws BeansException
+     */
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        String[] beanNames = applicationContext.getBeanNamesForType(MaxComputerStrategy.class);
+        String[] beanNames = applicationContext.getBeanNamesForType(TaskStrategy.class);
         for (int i = 0; i < beanNames.length; i++) {
             String beanName = beanNames[i];
-            MaxComputerStrategy bean = (MaxComputerStrategy) applicationContext.getBean(beanName);
+            TaskStrategy bean = (TaskStrategy) applicationContext.getBean(beanName);
             strategyHashMap.put(bean.getName(), bean);
         }
     }

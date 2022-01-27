@@ -1,7 +1,8 @@
 package com.fuzhu.model.strateg.impl.maxComputer;
 
 import com.fuzhu.model.enums.MaxComputerStrategyNameEnum;
-import com.fuzhu.model.strateg.MaxComputerStrategy;
+import com.fuzhu.model.strateg.TaskStrategy;
+import com.fuzhu.model.strateg.impl.AbstractTaskStrategy;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @since 2022/1/27 21:53
  */
 @Component
-public class CreateTaskStrategy implements MaxComputerStrategy {
+public class CreateTaskStrategy extends AbstractTaskStrategy {
     @Override
     public String getName() {
         return MaxComputerStrategyNameEnum.CREATE.name();
@@ -18,6 +19,7 @@ public class CreateTaskStrategy implements MaxComputerStrategy {
 
     @Override
     public void execute(String taskId) {
+        maxComputerCoreService.process();
         System.out.println("任务：" + taskId + " 创建中。。。");
         try {
             Thread.sleep(3000);

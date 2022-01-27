@@ -1,7 +1,7 @@
 package com.fuzhu.service.impl;
 
 import com.fuzhu.designpattern.model.ResultInfo;
-import com.fuzhu.model.strateg.MaxComputerStrategy;
+import com.fuzhu.model.strateg.TaskStrategy;
 import com.fuzhu.model.strateg.MaxComputerStrategyContent;
 import com.fuzhu.service.MaxComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class MaxComputerServiceImpl implements MaxComputerService {
 
     @Override
     public ResultInfo handlerTask(String taskId, String handlerType) {
-        MaxComputerStrategy strategy = computerStrategyContent.getStrategy(handlerType);
+        TaskStrategy strategy = computerStrategyContent.getStrategy(handlerType);
         strategy.execute(taskId);
         return ResultInfo.buildSuccess("success");
     }
