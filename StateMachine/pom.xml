@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>StateMachine</artifactId>
+    <artifactId>state-machine</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -23,7 +23,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>Common</artifactId>
+            <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

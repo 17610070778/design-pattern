@@ -40,7 +40,6 @@ public class LoadBalanceContent {
      * @return
      */
     public String nextHost() {
-
         return loadBalanceMap.get(LoadBalanceName).getHost();
     }
 }

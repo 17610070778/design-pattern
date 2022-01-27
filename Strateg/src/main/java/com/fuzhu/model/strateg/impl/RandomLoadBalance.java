@@ -20,6 +20,7 @@ public class RandomLoadBalance extends AbstractLoadBalanceStrategy {
     public String getHost() {
         // 随机选择目标主机
         int random = (int)(Math.random() * 10000);
+        System.out.println("随机策略");
         return hosts.get(random % hosts.size());
     }
 }

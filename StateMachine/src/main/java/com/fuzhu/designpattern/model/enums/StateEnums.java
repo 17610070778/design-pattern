@@ -1,6 +1,7 @@
 package com.fuzhu.designpattern.model.enums;
 
 import com.fuzhu.designpattern.model.state.machine.StateContent;
+import com.fuzhu.designpattern.model.state.machine.StateContentImpl;
 import com.fuzhu.designpattern.model.state.machine.impl.*;
 
 /**
@@ -38,7 +39,7 @@ public enum StateEnums {
      */
     public static StateContent getStateContent(String stateName) {
 
-        StateContent stateContent = new StateContent();
+        StateContent stateContent = new StateContentImpl();
         StateEnums[] values = StateEnums.values();
         for (int i = 0; i < values.length; i++) {
             if (values[i].name().equals(stateName)){

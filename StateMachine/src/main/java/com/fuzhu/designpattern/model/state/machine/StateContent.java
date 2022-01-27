@@ -1,27 +1,24 @@
 package com.fuzhu.designpattern.model.state.machine;
 
+
 /**
  * 状态环境上下文
+ *
  * @author 辅助
  * @version 1.0
  * @date 2021/3/21 23:43
  */
-public class StateContent {
+
+public interface StateContent {
+
+
+    void setState(State state);
 
     /**
-     * 当前环境的状态
+     * 设置下一个目标状态
+     * @param stateName
      */
-    private State state;
+    public void nextState(String stateName);
 
-    public void nextState(String stateName){
-        state.changeState(this, stateName);
-    }
-
-    public String getStateName() {
-        return state.getName();
-    }
-
-    public void setState(State state) {
-        this.state = state;
-    }
+    public String getStateName();
 }

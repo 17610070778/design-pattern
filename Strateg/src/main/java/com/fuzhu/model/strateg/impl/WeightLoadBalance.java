@@ -37,6 +37,7 @@ public class WeightLoadBalance extends AbstractLoadBalanceStrategy {
     public String getHost() {
         Random random = new Random();
         int index = random.nextInt(hostWeight.size());
+        System.out.println("权重策略");
         return hostWeight.get(index);
     }
 }

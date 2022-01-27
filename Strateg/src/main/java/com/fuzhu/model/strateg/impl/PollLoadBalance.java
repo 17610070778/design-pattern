@@ -23,6 +23,7 @@ public class PollLoadBalance extends AbstractLoadBalanceStrategy {
         synchronized (atomicInteger){
             atomicInteger.compareAndSet(hosts.size() - 1, 0);
             int index = atomicInteger.getAndIncrement();
+            System.out.println("轮询策略");
             return hosts.get(index);
         }
     }

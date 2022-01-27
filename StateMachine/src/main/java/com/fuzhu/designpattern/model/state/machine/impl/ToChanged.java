@@ -18,9 +18,12 @@ public class ToChanged implements State {
 
     @Override
     public void changeState(StateContent content, String stateName) {
-        if (StateEnums.UNDEREVALUATION.name().equals(stateName)){
-            // 如果传入的下一个状态为评估中，则变更状态
+        if (StateEnums.TOEVALUATE.name().equals(stateName)){
+            // 如果传入的下一个状态为"待评估"，则变更状态
             content.setState(new UnderEvaluation());
+        }if(StateEnums.CHANGING.name().equals(stateName)){
+            // 如果传入的下一个状态为"变更中"，则变更状态
+            content.setState(new Changing());
         }else {
             throw new RuntimeException("不支持的状态变更");
         }
