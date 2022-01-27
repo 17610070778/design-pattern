@@ -7,7 +7,7 @@ import com.fuzhu.designpattern.model.ResultInfo;
  * @version 1.0
  * @date 2021/3/28 12:29
  */
-public interface SimpleService {
+public interface LoadBalanceService {
     ResultInfo testLoadbalance();
 
 }

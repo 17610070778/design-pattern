@@ -2,7 +2,7 @@ package com.fuzhu.service.impl;
 
 import com.fuzhu.designpattern.model.ResultInfo;
 import com.fuzhu.model.strateg.LoadBalanceContent;
-import com.fuzhu.service.SimpleService;
+import com.fuzhu.service.LoadBalanceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Slf4j
-public class SimpleServiceImpl implements SimpleService {
+public class LoadBalanceServiceImpl implements LoadBalanceService {
 
     @Autowired
     private LoadBalanceContent loadBalanceContent;

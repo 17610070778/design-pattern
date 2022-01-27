@@ -1,7 +1,7 @@
 package com.fuzhu.controller;
 
 import com.fuzhu.designpattern.model.ResultInfo;
-import com.fuzhu.service.SimpleService;
+import com.fuzhu.service.LoadBalanceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/fuzhu/simple")
-public class SimpleController {
+public class LoadBalanceController {
 
     @Autowired
-    private SimpleService simpleService;
+    private LoadBalanceService loadBalanceService;
 
 
+    /**
+     * 测试负载均衡请查看配置文件
+     * @return
+     */
     @GetMapping("/testLoadbalance")
     public ResultInfo testLoadbalance(){
-        return simpleService.testLoadbalance();
+        return loadBalanceService.testLoadbalance();
     }
 }
