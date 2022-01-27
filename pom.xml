@@ -17,7 +17,7 @@
         <module>state-machine</module>
         <module>common</module>
         <module>template</module>
-        <module>strateg</module>
+        <module>strategy</module>
         <module>adapter</module>
     </modules>
 

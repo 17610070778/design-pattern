@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="adapter" />
+        <module name="common" />
+        <module name="state-machine" />
+        <module name="strategy" />
+        <module name="template" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="adapter" target="8" />
+      <module name="Adapter" target="1.5" />
+      <module name="Common" target="8" />
+      <module name="common" target="8" />
+      <module name="design-pattern" target="8" />
+      <module name="DesignPattern" target="8" />
+      <module name="state-machine" target="8" />
+      <module name="StateMachine" target="8" />
+      <module name="Strateg" target="8" />
+      <module name="strateg" target="8" />
+      <module name="strategy" target="8" />
+      <module name="template" target="8" />
+      <module name="Template" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
