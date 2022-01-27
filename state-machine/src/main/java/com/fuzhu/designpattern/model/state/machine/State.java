@@ -14,9 +14,9 @@ public interface State {
 
     /**
      * 根据状态的名字变更到不同的状态
-     * @param stateName
+     * @param targetStateName
      * @param content
      * @return
      */
-    void changeState(StateContent content, String stateName);
+    void changeState(StateContent content, String targetStateName);
 }

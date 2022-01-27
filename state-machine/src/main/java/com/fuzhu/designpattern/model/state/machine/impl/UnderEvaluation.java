@@ -17,8 +17,8 @@ public class UnderEvaluation implements State {
     }
 
     @Override
-    public void changeState(StateContent content, String stateName) {
-        if (StateEnums.TOCHANGED.name().equals(stateName)){
+    public void changeState(StateContent content, String targetStateName) {
+        if (StateEnums.TOCHANGED.name().equals(targetStateName)){
             content.setState(new ToChanged());
         }else {
             throw new RuntimeException("不支持的状态变更");

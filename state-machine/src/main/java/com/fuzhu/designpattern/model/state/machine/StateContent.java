@@ -16,9 +16,9 @@ public interface StateContent {
 
     /**
      * 设置下一个目标状态
-     * @param stateName
+     * @param targetStateName
      */
-    public void nextState(String stateName);
+    public void nextState(String targetStateName);
 
     public String getStateName();
 }

@@ -17,8 +17,8 @@ public class ToEvaluate implements State {
     }
 
     @Override
-    public void changeState(StateContent content, String stateName) {
-        if (StateEnums.UNDEREVALUATION.name().equals(stateName)){
+    public void changeState(StateContent content, String targetStateName) {
+        if (StateEnums.UNDEREVALUATION.name().equals(targetStateName)){
             // 如果传入的下一个状态为评估中，则变更状态
             content.setState(new UnderEvaluation());
         }else {

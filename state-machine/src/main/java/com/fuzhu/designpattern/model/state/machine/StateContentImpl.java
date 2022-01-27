@@ -18,10 +18,9 @@ public class StateContentImpl implements StateContent {
      */
     private State state;
 
-
     @Override
-    public void nextState(String stateName) {
-        state.changeState(this, stateName);
+    public void nextState(String targetStateName) {
+        state.changeState(this, targetStateName);
     }
 
     @Override

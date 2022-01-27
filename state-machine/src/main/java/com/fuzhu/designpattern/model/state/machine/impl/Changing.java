@@ -20,11 +20,11 @@ public class Changing implements State {
     }
 
     @Override
-    public void changeState(StateContent content, String stateName) {
-        if (StateEnums.TOEVALUATE.name().equals(stateName)){
+    public void changeState(StateContent content, String targetStateName) {
+        if (StateEnums.TOEVALUATE.name().equals(targetStateName)){
             // 待评估
             content.setState(new ToEvaluate());
-        }else if (StateEnums.CHANGECOMPLETED.name().equals(stateName)){
+        }else if (StateEnums.CHANGECOMPLETED.name().equals(targetStateName)){
             // 变更完成
             content.setState(new ChangeCompleted());
         }else {

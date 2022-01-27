@@ -17,11 +17,11 @@ public class ToChanged implements State {
     }
 
     @Override
-    public void changeState(StateContent content, String stateName) {
-        if (StateEnums.TOEVALUATE.name().equals(stateName)){
+    public void changeState(StateContent content, String targetStateName) {
+        if (StateEnums.TOEVALUATE.name().equals(targetStateName)){
             // 如果传入的下一个状态为"待评估"，则变更状态
             content.setState(new UnderEvaluation());
-        }if(StateEnums.CHANGING.name().equals(stateName)){
+        }if(StateEnums.CHANGING.name().equals(targetStateName)){
             // 如果传入的下一个状态为"变更中"，则变更状态
             content.setState(new Changing());
         }else {

@@ -17,7 +17,7 @@ public class ChangeCompleted implements State {
     }
 
     @Override
-    public void changeState(StateContent content, String stateName) {
+    public void changeState(StateContent content, String targetStateName) {
         throw new RuntimeException("状态已到终点，不可变更为其他状态");
     }
 }
